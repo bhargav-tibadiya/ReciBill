@@ -1,0 +1,38 @@
+@import '../../Styles/constant';
+
+.navbar_container {
+  width: 750px;
+  height: 75px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+
+  position: absolute;
+  bottom: 30px;
+
+  @include flex(column, center, center);
+
+  .navbar_box {
+    @include flex(row, center, center);
+    @include occupyFullSpace();
+    gap: 30px;
+
+    .menuItems {
+      @include flex(row, center, center);
+      @include transition();
+      @include spacingMP(0, 5px 10px);
+      font-family: Bricolage Grotesque;
+      font-size: 32px;
+
+      min-width: 130px;
+      border-radius: 50px;
+      cursor: pointer;
+
+      &._active_ {
+        background-color: $green1;
+        color: $black;
+      }
+    }
+  }
+
+}
