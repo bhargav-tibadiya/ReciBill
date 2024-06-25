@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 import { routes } from './Config/routes'
-import Test from './Pages/Test/Test'
 import Wrapper from './Layout/Wrapper/Wrapper'
 import Home from './Pages/Home/Home'
 import Application from './Pages/Application/Application'
@@ -12,15 +11,15 @@ const App = () => {
 
   return (
     <div className='app_container'>
-      <Wrapper>
-        <Routes>
-          <Route path={routes.test} element={<Test />} />
+      <Routes>
+        <Route element={<Wrapper />} >
           <Route path={routes.default} element={<Home />} />
+          <Route path={routes.home} element={<Home />} />
           <Route path={routes.app} element={<Application />} />
-          <Route path={routes.default} element={<About />} />
-          <Route path={routes.default} element={<Contact />} />
-        </Routes>
-      </Wrapper >
+          <Route path={routes.about} element={<About />} />
+          <Route path={routes.contact} element={<Contact />} />
+        </Route>
+      </Routes>
     </div>
   )
 }

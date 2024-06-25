@@ -1,7 +1,66 @@
 @import '../../Styles/constant';
 
-.home_container{
+.home_container {
   @include flex(column, center, center);
+
   width: 100%;
   height: 100%;
+
+  .main_heading {
+    font-family: Bricolage Grotesque;
+    font-size: 48px;
+    color: $black;
+
+    & h1 {
+      font-weight: 600;
+      line-height: 100%;
+    }
+
+    .main_heading__highlight {
+      background: $green3;
+      border-radius: 10px;
+    }
+  }
+
+  .main_desription {
+    @include flex(column, center, center);
+
+    font-family: Agrandir;
+    font-size: 28px;
+    line-height: 100%;
+
+    color: $black;
+
+    max-width: 1000px;
+
+    & h2 {
+      margin: 10px 0;
+      font-family: AgrandirBold;
+      line-height: 42px;
+    }
+
+    & h3 {
+      margin: 0;
+      text-align: center;
+    }
+
+
+  }
+
+  .bg_animation {
+    @include flex(column, center, center);
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    z-index: -1;
+    max-width: 1920px;
+    max-height: 100%;
+    overflow: auto;
+
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+
+  }
 }
