@@ -1,0 +1,7 @@
+@import '../../Styles/constant';
+
+.home_container{
+  @include flex(column, center, center);
+  width: 100%;
+  height: 100%;
+}

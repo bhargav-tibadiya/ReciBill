@@ -1,5 +1,5 @@
 export const routes = {
-  default : '/test',
+  default : '/',
   test : '/test',
   home : '/home',
   app : '/app',

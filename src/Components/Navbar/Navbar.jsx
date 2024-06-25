@@ -1,28 +1,34 @@
 import { useState } from 'react'
 import styles from './Navbar.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 const menuMap = [
   {
     key: 0,
-    value: "Home"
+    lable: "Home",
+    value: "home"
   },
   {
     key: 1,
-    value: "App"
+    lable: "App",
+    value: "app"
   },
   {
     key: 2,
-    value: "About"
+    lable: "About",
+    value: "about"
   },
   {
     key: 3,
-    value: "Contact"
+    lable: "Contact",
+    value: "contact"
   },
 ]
 
 const Navbar = () => {
 
   const [selectedMenuId, setSelectedMenuId] = useState(0)
+  const navigate = useNavigate()
 
   return (
     <div className={styles.navbar_container}>
@@ -33,9 +39,9 @@ const Navbar = () => {
               <div
                 key={index}
                 className={`${styles.menuItems} ${selectedMenuId === index ? styles._active_ : ''}`}
-                onClick={() => { setSelectedMenuId(menu.key) }}
+                onClick={() => { setSelectedMenuId(menu.key), navigate(`/${menu.value}`) }}
               >
-                {menu.value}
+                {menu.lable}
               </div>
             )
           })
