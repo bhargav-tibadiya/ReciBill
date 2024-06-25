@@ -1,19 +1,29 @@
 @import './Styles/constant';
-@import "@fontsource/bricolage-grotesque";
 
 #root {
   margin: 0;
   padding: 0;
-}
-
-@font-face {
-  font-family: Agrandir;
-  src: url('fonts/Agrandir-Regular.otf');
+  box-sizing: border-box
 }
 
 .app_container {
   @include flex(column, center, center);
   width: 100%;
   height: 100vh;
-  background-color: rgb(202, 255, 255);
+}
+
+// Importing Fonts
+
+@font-face {
+  font-family: Agrandir;
+  src: url('fonts/Agrandir-Regular.otf');
+}
+@font-face {
+  font-family: AgrandirBold;
+  src: url('fonts/Agrandir-TextBold.otf');
+}
+
+@font-face {
+  font-family: Bricolage Grotesque;
+  src: url('fonts/BricolageGrotesque.ttf');
 }
