@@ -1,0 +1,118 @@
+@import '../../Styles/constant';
+
+.about_container {
+  @include flex(column, flex-start, center);
+  @include occupyFullSpace();
+  overflow: auto;
+  gap: 50px;
+  padding: 50px 0 150px;
+
+  .intro_heading {
+    @include occupyFullSpace();
+    max-width: 1000px;
+    @include flex(column, flex-start, center);
+
+    & h2 {
+      font-family: Bricolage Grotesque;
+      color: $black;
+      font-size: 52px;
+      margin: 0px 0px 12px;
+    }
+
+    & h3 {
+      font-family: Agrandir;
+      color: $black;
+      font-size: 26px;
+      margin: 6px 0;
+      text-align: center;
+      line-height: 100%;
+    }
+  }
+
+  .team {
+    @include flex(row, flex-end, center);
+    gap: 25px;
+    margin-bottom: 50px;
+
+    .member {
+      @include flex(column, center, center);
+      width: 450px;
+      height: 800px;
+
+      .member_avatar {
+        width: 350px;
+        height: 650px;
+
+        svg {
+          width: 340px;
+          height: 650px;
+
+        }
+      }
+
+      .member_name {
+        font-family: Bricolage Grotesque;
+        font-size: 30px;
+        color: $black;
+      }
+
+      .member_desc {
+        font-family: Agrandir;
+        font-size: 22px;
+        max-width: 400px;
+        line-height: 100%;
+        color: $black;
+        text-align: center;
+      }
+    }
+  }
+
+  .user_testimonial {
+    @include flex(column, center, center);
+
+    .testimonial_heading {
+      font-family: Bricolage Grotesque;
+      font-size: 42px;
+      font-weight: 600;
+      color: $black;
+      margin-bottom: 45px;
+    }
+
+    .testimonials {
+      @include flex(row, center, center);
+      gap: 25px;
+
+      .testimonial {
+        box-sizing: border-box;
+        @include flex(column, space-between, center);
+        padding: 25px;
+        border: 2px solid black;
+        border-radius: 15px;
+        width: 400px;
+        height: 400px;
+
+        .content {
+          font-family: Agrandir;
+          font-size: 20px;
+          line-height: 125%;
+          color: $black;
+        }
+
+        .user_name {
+          text-align: center;
+          font-family: Bricolage Grotesque;
+          font-size: 28px;
+          line-height: 100%;
+          color: $black;
+
+          .user_position {
+            font-family: Agrandir;
+            font-size: 14px;
+            line-height: 100%;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

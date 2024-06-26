@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import { useNavigate } from 'react-router-dom'
 
@@ -24,11 +24,24 @@ const menuMap = [
     value: "contact"
   },
 ]
+const pathValueMap = {
+  '/home': 0,
+  '/app': 1,
+  '/about': 2,
+  '/contact': 3,
+}
 
 const Navbar = () => {
 
-  const [selectedMenuId, setSelectedMenuId] = useState(0)
+  const [selectedMenuId, setSelectedMenuId] = useState()
   const navigate = useNavigate()
+
+  console.log('location,pathname', location.pathname)
+
+  useEffect(() => {
+    const currentPath = location.pathname;
+    setSelectedMenuId(pathValueMap[currentPath])
+  }, [])
 
   return (
     <div className={styles.navbar_container}>
