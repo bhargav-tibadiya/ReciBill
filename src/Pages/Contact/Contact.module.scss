@@ -1,0 +1,234 @@
+@import '../../Styles/constant';
+
+.contact_container {
+  @include flex(column, flex-start, center);
+  @include occupyFullSpace();
+  overflow: auto;
+  gap: 50px;
+  padding: 50px 0 150px;
+
+  .intro_heading {
+    max-width: 1000px;
+    @include flex(column, flex-start, center);
+
+    & h2 {
+      font-family: Bricolage Grotesque;
+      color: $black;
+      font-size: 52px;
+      margin: 0px 0px 12px;
+    }
+  }
+
+  .contact_heading {
+    @include flex(row, space-between, center);
+    width: 1300px;
+
+    .illustration {
+      width: 50%;
+
+      svg {
+        min-width: 450px;
+        height: 250px;
+      }
+    }
+
+    .header {
+      width: 50%;
+
+      h2 {
+        font-family: Bricolage Grotesque;
+        font-weight: 400;
+        color: $black;
+        font-size: 40px;
+        margin: 0;
+        line-height: 100%;
+      }
+
+      h3 {
+        font-family: Agrandir;
+        font-weight: 400;
+        color: $black;
+        font-size: 24px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  .contact_form {
+    @include flex(row, space-between, center);
+    width: 1300px;
+    background-color: aqua;
+
+    .contact_info {
+      @include flex(column, center, center);
+      width: 40%;
+      border-radius: 12px;
+      background-color: $black;
+      padding: 24px;
+      gap: 30px;
+
+      .info_card {
+        @include flex(row, flex-start, flex-start);
+        width: 100%;
+
+        .left {
+          @include flex(row, center, center);
+          width: 50px;
+          height: 36px;
+        }
+
+        .right {
+          @include flex(column, flex-start, flex-start);
+          gap: 8px;
+
+          h3 {
+            font-family: Bricolage Grotesque;
+            margin: 0;
+            font-weight: 600;
+            font-size: 24px;
+          }
+
+          .desx1 {
+            font-family: Agrandir;
+            font-size: 20px;
+          }
+
+          .desx2 {
+            @include flex(row, flex-start, center);
+            gap: 20px;
+            font-size: 20px;
+
+            a {
+              @include flex(row, flex-end, flex-end);
+              font-family: Agrandir;
+              color: $white;
+              text-decoration: none;
+
+              span {
+                font-weight: 600;
+                color: $green1;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    .form {
+      @include flex(column, flex-start, flex-start);
+      width: 50%;
+      background-color: aquamarine;
+      gap: 20px;
+
+      .name {
+        @include flex(row, space-between, flex-start);
+        width: 100%;
+
+        .first_name {
+          @include flex(column, flex-start, flex-start);
+          width: 48.5%;
+          gap: 6px;
+
+          .labelF {
+            font-family: Bricolage Grotesque;
+            font-size: 16px;
+            font-weight: 300;
+            color: $black;
+          }
+
+          .inputF {
+            width: 100%;
+
+            input {
+              box-sizing: border-box;
+              @include flex(row, center, center);
+              font-family: Agrandir;
+              font-size: 16px;
+              line-height: 100%;
+              border: none;
+              outline: none;
+              width: 100%;
+              background-color: $black;
+              padding: 12px;
+              border-radius: 8px;
+
+              &::placeholder {
+                color: $white;
+                font-family: Agrandir;
+              }
+            }
+          }
+        }
+
+        .last_name {
+          @include flex(column, flex-start, flex-start);
+          width: 48.5%;
+          gap: 6px;
+
+          .labelF {
+            font-family: Bricolage Grotesque;
+            font-size: 16px;
+            font-weight: 300;
+            color: $black;
+          }
+
+          .inputF {
+            width: 100%;
+
+            input {
+              box-sizing: border-box;
+              @include flex(row, center, center);
+              font-family: Agrandir;
+              font-size: 16px;
+              border: none;
+              outline: none;
+              width: 100%;
+              background-color: $black;
+              padding: 12px;
+              border-radius: 8px;
+
+              &::placeholder {
+                color: $white;
+                font-family: Agrandir;
+              }
+            }
+          }
+        }
+      }
+
+      .email {
+        width: 100%;
+
+        .labelF {
+          font-family: Bricolage Grotesque;
+          font-size: 16px;
+          font-weight: 300;
+          color: $black;
+        }
+
+        .inputF {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            @include flex(row, center, center);
+            font-family: Agrandir;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            width: 100%;
+            background-color: $black;
+            padding: 12px;
+            border-radius: 8px;
+
+            &::placeholder {
+              color: $white;
+              font-family: Agrandir;
+            }
+          }
+        }
+      }
+    }
+  }
+}

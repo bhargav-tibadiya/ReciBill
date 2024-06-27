@@ -18,7 +18,7 @@ const members = [
     id: 2,
     avatar: <Avatar3 />,
     name: "You can be here",
-    responcibility: "Why don’t you join us and Contribute in building something Great ?"
+    responcibility: "Why don't you join us and Contribute in building something Great ?"
   },
 ]
 
@@ -28,7 +28,7 @@ const testimonials = [
     pfp: <Neuvillete />,
     name: "Meet Khunt",
     position: "Sales Manager at Yogi Impex",
-    description: 'I’ve been using the app since 2 days and I’m loving it. Excited to see what kind of feature they develop over the time. I love the custom design feature of that it helped me to develop my custom design for my company',
+    description: "I've been using the app since 2 days and I'm loving it. Excited to see what kind of feature they develop over the time. I love the custom design feature of that it helped me to develop my custom design for my company",
   },
   {
     id: 1,
