@@ -25,6 +25,7 @@ const menuMap = [
   },
 ]
 const pathValueMap = {
+  '/': 0,
   '/home': 0,
   '/app': 1,
   '/about': 2,
