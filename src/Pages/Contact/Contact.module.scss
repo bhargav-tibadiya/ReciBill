@@ -57,7 +57,6 @@
   .contact_form {
     @include flex(row, space-between, center);
     width: 1300px;
-    background-color: aqua;
 
     .contact_info {
       @include flex(column, center, center);
@@ -118,7 +117,6 @@
     .form {
       @include flex(column, flex-start, flex-start);
       width: 50%;
-      background-color: aquamarine;
       gap: 20px;
 
       .name {
@@ -133,7 +131,7 @@
           .labelF {
             font-family: Bricolage Grotesque;
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 500;
             color: $black;
           }
 
@@ -169,7 +167,7 @@
           .labelF {
             font-family: Bricolage Grotesque;
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 500;
             color: $black;
           }
 
@@ -203,7 +201,7 @@
         .labelF {
           font-family: Bricolage Grotesque;
           font-size: 16px;
-          font-weight: 300;
+          font-weight: 500;
           color: $black;
         }
 
@@ -229,6 +227,227 @@
           }
         }
       }
+
+      .number {
+        width: 100%;
+
+        .labelF {
+          font-family: Bricolage Grotesque;
+          font-size: 16px;
+          font-weight: 500;
+          color: $black;
+        }
+
+        .inputF {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            @include flex(row, center, center);
+            font-family: Agrandir;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            width: 100%;
+            background-color: $black;
+            padding: 12px;
+            border-radius: 8px;
+
+            &::placeholder {
+              color: $white;
+              font-family: Agrandir;
+            }
+          }
+        }
+      }
+
+      .message {
+        width: 100%;
+
+        .labelF {
+          font-family: Bricolage Grotesque;
+          font-size: 16px;
+          font-weight: 500;
+          color: $black;
+        }
+
+        .inputF {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            @include flex(column, flex-start, flex-start);
+            font-family: Agrandir;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            padding: 12px;
+            border-radius: 8px;
+            word-wrap: break-word;
+            max-width: 100%;
+
+            &::placeholder {
+              color: $white;
+              font-family: Agrandir;
+            }
+          }
+        }
+      }
+
+      .submit_button {
+        width: 100%;
+        @include flex(column, center, center);
+
+        button {
+          width: 100%;
+          background: $green1;
+          padding: 12px;
+          font-family: Bricolage Grotesque;
+          border: none;
+          outline: none;
+          border-radius: 8px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $black;
+        }
+
+      }
+    }
+  }
+
+  .suggest {
+    @include flex(row, space-between, center);
+    width: 1500px;
+    margin: 50px 0;
+    color: $black;
+
+    .suggest_left {
+      @include flex(column, flex-start, flex-start);
+      width: 48.5%;
+
+      .suggest_head {
+        width: 100%;
+        font-family: Bricolage Grotesque;
+        font-size: 48px;
+        font-weight: 600;
+      }
+
+      .suggest_desc {
+        font-family: Agrandir;
+      }
+
+      .suggest_button {
+        box-sizing: border-box;
+        width: 100%;
+        @include flex(row, space-between, center);
+        margin: 10px 0;
+        border: 1px solid $black;
+        border-radius: 32px;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+
+        &:hover {
+          background-color: $green4;
+          transition: 0.3s all ease-in-out;
+        }
+
+        &:hover .contact_text_icon {
+          transform: rotate(360deg);
+          transition: 0.3s all ease-in-out;
+        }
+
+        span {
+          @include flex(row, center, center);
+        }
+
+        .contact_text {
+          font-family: Bricolage Grotesque;
+          font-size: 32px;
+          font-weight: 600;
+        }
+
+        .contact_text_icon {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .suggest_right {
+      width: 48.5%;
+      height: 100%;
+      @include flex(row, center, center);
+
+    }
+  }
+
+  .collab {
+    @include flex(row, space-between, center);
+    flex-direction: row-reverse;
+    width: 1500px;
+    margin: 50px 0;
+    color: $black;
+
+    .collab_left {
+      @include flex(column, flex-start, flex-start);
+      width: 48.5%;
+
+      .collab_head {
+        width: 100%;
+        font-family: Bricolage Grotesque;
+        font-size: 48px;
+        font-weight: 600;
+      }
+
+      .collab_desc {
+        font-family: Agrandir;
+      }
+
+      .collab_button {
+        box-sizing: border-box;
+        width: 100%;
+        @include flex(row, space-between, center);
+        margin: 10px 0;
+        border: 1px solid $black;
+        border-radius: 32px;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+
+        &:hover {
+          background-color: $green4;
+          transition: 0.3s all ease-in-out;
+        }
+
+        &:hover .collab_text_icon {
+          transform: rotate(360deg);
+          transition: 0.3s all ease-in-out;
+        }
+
+        span {
+          @include flex(row, center, center);
+        }
+
+        .collab_text {
+          font-family: Bricolage Grotesque;
+          font-size: 32px;
+          font-weight: 600;
+        }
+
+        .collab_text_icon {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .collab_right {
+      width: 48.5%;
+      height: 100%;
+      @include flex(row, center, center);
+
     }
   }
 }
