@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home'
 import Application from './Pages/Application/Application'
 import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
+import Test from './Pages/Test/Test'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
     <div className='app_container'>
       <Routes>
         <Route element={<Wrapper />} >
+          <Route path={routes.test} element={<Test />} />
           <Route path={routes.default} element={<Home />} />
           <Route path={routes.home} element={<Home />} />
           <Route path={routes.app} element={<Application />} />
