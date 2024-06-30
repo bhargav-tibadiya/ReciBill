@@ -1,0 +1,114 @@
+@import '../../Styles/constant';
+
+.application_container {
+  @include flex(column, flex-start, center);
+  @include occupyFullSpace();
+  height: fit-content;
+  padding: 50px 0 150px;
+  overflow: auto;
+  gap: 50px;
+
+  .intro_heading {
+    @include occupyFullSpace();
+    max-width: 1000px;
+    @include flex(column, flex-start, center);
+
+    & h2 {
+      font-family: Bricolage Grotesque;
+      color: $black;
+      font-size: 52px;
+      margin: 0px 0px 12px;
+    }
+  }
+
+  .design_container {
+    width: 100%;
+    max-width: 1400px;
+    height: fit-content;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+
+    .design {
+      display: flex;
+      @include flex(column, center, center);
+
+      .design_frame {
+        @include flex(column, center, flex-start);
+        padding: 12px;
+        gap: 12px;
+        border: 1px solid black;
+        border-radius: 12px;
+        width: 100%;
+        max-width: fit-content;
+
+        .design_name {
+          font-family: Bricolage Grotesque;
+          color: $black;
+          font-size: 52px;
+          font-weight: 600;
+        }
+
+        .design_tags {
+          @include flex(row, center, center);
+          gap: 10px;
+          font-family: Agrandir;
+          font-size: 18px;
+          color: $black;
+
+          span {
+            @include flex(row, center, center);
+            background-color: $green4;
+            border-radius: 5px;
+            padding: 5px 20px;
+            line-height: 100%;
+            border-bottom: 2px solid $green1;
+          }
+        }
+
+        .design_select {
+
+          box-sizing: border-box;
+          width: 100%;
+          @include flex(row, space-between, center);
+          margin: 10px 0;
+          border: 1px solid $black;
+          border-radius: 32px;
+          padding: 5px 15px;
+          cursor: pointer;
+          transition: 0.3s all ease-in-out;
+
+          &:hover {
+            background-color: $green4;
+            transition: 0.3s all ease-in-out;
+          }
+
+          &:hover .select_text_icon {
+            transform: rotate(360deg);
+            transition: 0.3s all ease-in-out;
+          }
+
+          span {
+            @include flex(row, center, center);
+          }
+
+          .select_text {
+            color: $black;
+            font-family: Bricolage Grotesque;
+            font-size: 32px;
+            font-weight: 600;
+          }
+
+          .select_text_icon {
+            transform: rotate(0deg);
+          }
+
+        }
+
+        .design_select.selected_design{
+          background-color: $green3;
+        }
+      }
+    }
+  }
+}

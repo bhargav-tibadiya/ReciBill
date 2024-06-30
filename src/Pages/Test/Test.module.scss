@@ -1,0 +1,131 @@
+@import '../../Styles/constant';
+
+
+.info_form_container {
+  @include flex(column, flex-start, center);
+  @include occupyFullSpace();
+
+  .heading {
+    font-family: Bricolage Grotesque;
+    font-weight: 500;
+    color: $black;
+    font-size: 38px;
+  }
+
+  .info_form {
+    border: 1px solid red;
+    @include flex(column, center, center);
+    max-width: 1000px;
+    min-width: 800px;
+    padding: 100px 25px;
+    gap: 25px;
+
+    .main_title,
+    .order_id {
+      width: 100%;
+      border: 1px solid green;
+      box-sizing: border-box;
+
+      .label {
+        font-family: Bricolage Grotesque;
+        font-weight: 500;
+        color: $black;
+        font-size: 24px;
+      }
+
+      .input {
+        width: 100%;
+
+        input {
+          box-sizing: border-box;
+          background-color: $black;
+          font-family: Agrandir;
+          color: $white;
+          width: 100%;
+          padding: 8px 18px;
+          font-size: 22px;
+          border: none;
+          outline: none;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .date_select {
+      @include flex(row, space-between, center);
+      gap: 0px;
+      width: 100%;
+      border: 1px solid green;
+      box-sizing: border-box;
+
+      .date,
+      .month,
+      .year {
+        width: 32%;
+
+        .label {
+          font-family: Bricolage Grotesque;
+          font-weight: 500;
+          color: $black;
+          font-size: 24px;
+        }
+
+        .input {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            background-color: $black;
+            font-family: Agrandir;
+            color: $white;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+
+    .from_to {
+      @include flex(row, space-between, center);
+      gap: 0px;
+      width: 100%;
+      border: 1px solid green;
+      box-sizing: border-box;
+
+      .from,
+      .to {
+        width: 49%;
+
+        .label {
+          font-family: Bricolage Grotesque;
+          font-weight: 500;
+          color: $black;
+          font-size: 24px;
+        }
+
+        .input {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            background-color: $black;
+            font-family: Agrandir;
+            color: $white;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+  }
+}
