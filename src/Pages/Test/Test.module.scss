@@ -4,6 +4,8 @@
 .info_form_container {
   @include flex(column, flex-start, center);
   @include occupyFullSpace();
+  max-height: 100vh;
+  overflow: auto;
 
   .heading {
     font-family: Bricolage Grotesque;
@@ -21,7 +23,10 @@
     gap: 25px;
 
     .main_title,
-    .order_id {
+    .order_id,
+    .type,
+    .item_title,
+    .no_of_entries {
       width: 100%;
       border: 1px solid green;
       box-sizing: border-box;
@@ -89,7 +94,6 @@
       }
     }
 
-
     .from_to {
       @include flex(row, space-between, center);
       gap: 0px;
@@ -127,5 +131,89 @@
       }
     }
 
+    .item_info {
+      @include flex(row, space-between, center);
+      gap: 0px;
+      width: 100%;
+      border: 1px solid green;
+      box-sizing: border-box;
+
+      .cost,
+      .quantity,
+      .amount {
+        width: 32%;
+
+        .label {
+          font-family: Bricolage Grotesque;
+          font-weight: 500;
+          color: $black;
+          font-size: 24px;
+        }
+
+        .input {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            background-color: $black;
+            font-family: Agrandir;
+            color: $white;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .amount {
+        .total {
+          box-sizing: border-box;
+          background-color: $black;
+          font-family: Agrandir;
+          color: $white;
+          width: 100%;
+          padding: 8px 18px;
+          font-size: 22px;
+          border: none;
+          outline: none;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .submit_button {
+      width: 100%;
+      @include flex(column, center, center);
+
+      button {
+        width: 100%;
+        background: $green1;
+        padding: 12px;
+        font-family: Bricolage Grotesque;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $black;
+      }
+
+    }
+  }
+
+  input {
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
   }
 }
