@@ -32,6 +32,7 @@
       box-sizing: border-box;
 
       .label {
+        @include flex(row, flex-start, center);
         font-family: Bricolage Grotesque;
         font-weight: 500;
         color: $black;
@@ -69,6 +70,7 @@
         width: 32%;
 
         .label {
+          @include flex(row, flex-start, center);
           font-family: Bricolage Grotesque;
           font-weight: 500;
           color: $black;
@@ -106,6 +108,7 @@
         width: 49%;
 
         .label {
+          @include flex(row, flex-start, center);
           font-family: Bricolage Grotesque;
           font-weight: 500;
           color: $black;
@@ -144,6 +147,7 @@
         width: 32%;
 
         .label {
+          @include flex(row, flex-start, center);
           font-family: Bricolage Grotesque;
           font-weight: 500;
           color: $black;
@@ -207,6 +211,12 @@
       }
 
     }
+
+    .entry_container {
+      width: 100%;
+      @include flex(column, center, center);
+      gap: 25px;
+    }
   }
 
   input {
@@ -214,6 +224,26 @@
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       display: none;
+    }
+  }
+
+  .errors {
+    @include flex(row, center, center);
+    gap: 5px;
+    font-family: AgrandirBold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: red;
+    padding-left: 10px;
+
+    span {
+      max-width: 20px;
+      max-height: 20px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }

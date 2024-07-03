@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styles from './Test.module.scss'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { Warning } from '../../Assests/SVG/GlobalSVG'
 
 const validationSchema = yup.object().shape({
   main_title: yup.string().required('Please Enter the Title'),
@@ -36,7 +37,6 @@ const initialValues = {
   subtotal: 0,
   discount: 0,
   total: 0
-
 }
 
 const Test = () => {
@@ -49,7 +49,7 @@ const Test = () => {
     validationSchema: validationSchema,
   })
 
-  const { values, handleCange, handleBlur, setFieldValue, touched, errors } = formik;
+  const { values, handleChange, handleBlur, setFieldValue, touched, errors } = formik;
 
   const handleItemDataChange = (id, field, value) => {
     const macthingItem = items.length.find((item) => {
@@ -77,14 +77,14 @@ const Test = () => {
         <div className={styles.main_title}>
           <div className={styles.label}>
             Main Title
-            {(touched.main_title && errors.main_title) ?? <div className={styles.errors}>{errors.main_title}</div>}
+            {(touched.main_title && errors.main_title) ? <div className={styles.errors}><span><Warning /></span>{errors.main_title}</div> : ''}
           </div>
           <div className={styles.input}>
             <input
               type="text"
               placeholder='Ex. Invoice'
               name='main_title'
-              onChange={handleCange}
+              onChange={handleChange}
               onBlur={handleBlur}
               value={values.main_title}
             />
@@ -94,14 +94,14 @@ const Test = () => {
         <div className={styles.order_id}>
           <div className={styles.label}>
             Order ID
-            {(touched.bill_id && errors.bill_id) ?? <div className={styles.errors}>{errors.bill_id}</div>}
+            {(touched.bill_id && errors.bill_id) ? <div className={styles.errors}><span><Warning /></span>{errors.bill_id}</div> : ''}
           </div>
           <div className={styles.input}>
             <input
               type="text"
               placeholder='PI0001'
               name='bill_id'
-              onChange={handleCange}
+              onChange={handleChange}
               onBlur={handleBlur}
               value={values.bill_id}
             />
@@ -113,14 +113,14 @@ const Test = () => {
           <div className={styles.date}>
             <div className={styles.label}>
               Date
-              {(touched.day && errors.day) ?? <div className={styles.errors}>{errors.day}</div>}
+              {(touched.day && errors.day) ? <div className={styles.errors}><span><Warning /></span>{errors.day}</div> : ''}
             </div>
             <div className={styles.input}>
               <input
                 type="number"
                 placeholder='26'
                 name='day'
-                onChange={handleCange}
+                onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.day}
               />
@@ -130,14 +130,14 @@ const Test = () => {
           <div className={styles.month}>
             <div className={styles.label}>
               Month
-              {(touched.month && errors.month) ?? <div className={styles.errors}>{errors.month}</div>}
+              {(touched.month && errors.month) ? <div className={styles.errors}><span><Warning /></span>{errors.month}</div> : ''}
             </div>
             <div className={styles.input}>
               <input
                 type="number"
                 placeholder='11'
                 name='month'
-                onChange={handleCange}
+                onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.month}
               />
@@ -147,14 +147,14 @@ const Test = () => {
           <div className={styles.year}>
             <div className={styles.label}>
               Year
-              {(touched.year && errors.year) ?? <div className={styles.errors}>{errors.year}</div>}
+              {(touched.year && errors.year) ? <div className={styles.errors}><span><Warning /></span>{errors.year}</div> : ''}
             </div>
             <div className={styles.input}>
               <input
                 type="text"
                 placeholder='2003'
                 name='year'
-                onChange={handleCange}
+                onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.year}
               />
@@ -168,15 +168,16 @@ const Test = () => {
           <div className={styles.from}>
             <div className={styles.label}>
               From
-              {(touched.from && errors.from) ?? <div className={styles.errors}>{errors.from}</div>}
+              {(touched.from && errors.from) ? <div className={styles.errors}><span><Warning /></span>{errors.from}</div> : ''}
             </div>
             <div className={styles.input}>
               <input
                 type="text"
                 placeholder='Bhargav'
                 name='from'
-                onChange={handleCange}
+                onChange={handleChange}
                 onBlur={handleBlur}
+                value={values.from}
               />
             </div>
           </div>
@@ -184,15 +185,16 @@ const Test = () => {
           <div className={styles.to}>
             <div className={styles.label}>
               To
-              {(touched.to && errors.to) ?? <div className={styles.errors}>{errors.to}</div>}
+              {(touched.to && errors.to) ? <div className={styles.errors}><span><Warning /></span>{errors.to}</div> : ''}
             </div>
             <div className={styles.input}>
               <input
                 type="text"
                 placeholder='Shubham'
                 name='to'
-                onChange={handleCange}
+                onChange={handleChange}
                 onBlur={handleBlur}
+                values={values.to}
               />
             </div>
           </div>
@@ -207,66 +209,83 @@ const Test = () => {
             <input
               type="number"
               placeholder='1'
-              name='no_of_entries'
-              onChange={handleCange}
+              name='entries'
+              onChange={handleChange}
               onBlur={handleBlur}
+              value={values.entries}
             />
           </div>
         </div>
 
-        <div className={styles.item_title}>
-          <div className={styles.label}>
-            Item Name
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              placeholder='Logo Designing'
-              name='name'
-              onBlur={handleBlur}
-            />
-          </div>
-        </div>
+        {(() => {
+          const elements = []
+          for (let j = 0; j < (values.entries); j++) {
+            elements.push(
+              <div key={j} className={styles.entry_container}>
+                <div className={styles.item_title}>
+                  <div className={styles.label}>
+                    Item Name
+                  </div>
+                  <div className={styles.input}>
+                    <input
+                      type="text"
+                      placeholder='Logo Designing'
+                      name='name'
+                      onBlur={handleBlur}
+                      value={items[j]?.name}
+                    />
+                  </div>
+                </div>
 
-        <div className={styles.item_info}>
+                <div className={styles.item_info}>
 
-          <div className={styles.cost}>
-            <div className={styles.label}>
-              Cost
-            </div>
-            <div className={styles.input}>
-              <input
-                type="number"
-                placeholder='26'
-                name='cost'
-                onBlur={handleBlur}
-              />
-            </div>
-          </div>
+                  <div className={styles.cost}>
+                    <div className={styles.label}>
+                      Cost
+                    </div>
+                    <div className={styles.input}>
+                      <input
+                        type="number"
+                        placeholder='26'
+                        name='cost'
+                        onBlur={handleBlur}
+                        value={items[j]?.cost}
+                      />
+                    </div>
+                  </div>
 
-          <div className={styles.quantity}>
-            <div className={styles.label}>
-              Quantity
-            </div>
-            <div className={styles.input}>
-              <input
-                type="number"
-                placeholder='11'
-                name='quntity'
-                onBlur={handleBlur}
-              />
-            </div>
-          </div>
+                  <div className={styles.quantity}>
+                    <div className={styles.label}>
+                      Quantity
+                    </div>
+                    <div className={styles.input}>
+                      <input
+                        type="number"
+                        placeholder='11'
+                        name='quntity'
+                        onBlur={handleBlur}
+                        value={items[j]?.quantity}
+                      />
+                    </div>
+                  </div>
 
-          <div className={styles.amount}>
-            <div className={styles.label}>
-              Amount
-            </div>
-            <div className={styles.total}>
-              2003
-            </div>
-          </div>
-        </div>
+                  <div className={styles.amount}>
+                    <div className={styles.label}>
+                      Amount
+                    </div>
+                    <div className={styles.total}>
+                      {(parseFloat(items[j]?.quantity) * parseFloat(items[j]?.cost)) ?? 0}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+
+          }
+          return elements
+        })()}
+
+
 
         <div className={styles.submit_button}>
           <button type='submit' onClick={() => { }}>
