@@ -66,9 +66,9 @@ const Test = () => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
 
-      <div className={styles.info_form_container}>
+    <div className={styles.info_form_container}>
+      <form onSubmit={handleSubmit}>
 
         <div className={styles.info_form}>
 
@@ -299,8 +299,8 @@ const Test = () => {
           </div>
 
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
 
   )
 }
