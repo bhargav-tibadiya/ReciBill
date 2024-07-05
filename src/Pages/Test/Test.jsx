@@ -49,22 +49,6 @@ const Test = () => {
 
   const { values, handleChange, handleSubmit, setFieldValue, handleBlur, touched, errors } = formik;
 
-  // const handleItemDataChange = (id, field, value) => {
-  //   const updatedItems = items.map(item => {
-  //     if (item.id === id) {
-  //       return { ...item, [field]: value };
-  //     }
-  //     return item;
-  //   });
-
-  //   // If item does not exist, add it
-  //   if (!updatedItems.find(item => item.id === id)) {
-  //     updatedItems.push({ id, [field]: value });
-  //   }
-
-  //   setItems(updatedItems);
-  // };
-
   const handleItemDataChange = (e) => {
     const newEntries = parseInt(e.target.value, 10);
     setFieldValue('entries', newEntries);
