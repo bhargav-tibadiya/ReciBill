@@ -182,7 +182,7 @@
           box-sizing: border-box;
           background-color: $black;
           font-family: Agrandir;
-          color: $white;
+          color: $green2;
           width: 100%;
           padding: 8px 18px;
           font-size: 22px;
@@ -198,6 +198,7 @@
       @include flex(column, center, center);
 
       button {
+        cursor: pointer;
         width: 100%;
         background: $green1;
         padding: 12px;
