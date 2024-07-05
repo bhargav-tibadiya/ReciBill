@@ -7,6 +7,14 @@
   padding: 50px 0 150px;
   overflow: auto;
   gap: 50px;
+  transition: 0.3s all ease;
+
+  &.active{
+    max-height: 100vh;
+    overflow: hidden
+  }
+
+  // App css
 
   .intro_heading {
     @include occupyFullSpace();
@@ -105,10 +113,275 @@
 
         }
 
-        .design_select.selected_design{
+        .design_select.selected_design {
           background-color: $green3;
         }
       }
     }
   }
+
+  // Form CSS
+
+  .info_form_container {
+    @include flex(column, flex-start, center);
+    @include occupyFullSpace();
+    min-height: 100vh;
+    top: 0;
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: $white;
+    // max-height: 100vh;
+    overflow: auto;
+
+    &.active {
+      top: 0;
+      display: flex;
+      visibility: visible;
+    }
+
+    .heading {
+      font-family: Bricolage Grotesque;
+      font-weight: 500;
+      color: $black;
+      font-size: 38px;
+    }
+
+    .info_form {
+      border: 1px solid red;
+      @include flex(column, center, center);
+      max-width: 1000px;
+      min-width: 800px;
+      padding: 25px 25px 150px;
+      gap: 25px;
+
+      .main_title,
+      .order_id,
+      .type,
+      .item_title,
+      .no_of_entries {
+        width: 100%;
+        border: 1px solid green;
+        box-sizing: border-box;
+
+        .label {
+          @include flex(row, flex-start, center);
+          font-family: Bricolage Grotesque;
+          font-weight: 500;
+          color: $black;
+          font-size: 24px;
+        }
+
+        .input {
+          width: 100%;
+
+          input {
+            box-sizing: border-box;
+            background-color: $black;
+            font-family: Agrandir;
+            color: $white;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .date_select {
+        @include flex(row, space-between, center);
+        gap: 0px;
+        width: 100%;
+        border: 1px solid green;
+        box-sizing: border-box;
+
+        .date,
+        .month,
+        .year {
+          width: 32%;
+
+          .label {
+            @include flex(row, flex-start, center);
+            font-family: Bricolage Grotesque;
+            font-weight: 500;
+            color: $black;
+            font-size: 24px;
+          }
+
+          .input {
+            width: 100%;
+
+            input {
+              box-sizing: border-box;
+              background-color: $black;
+              font-family: Agrandir;
+              color: $white;
+              width: 100%;
+              padding: 8px 18px;
+              font-size: 22px;
+              border: none;
+              outline: none;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+
+      .from_to {
+        @include flex(row, space-between, center);
+        gap: 0px;
+        width: 100%;
+        border: 1px solid green;
+        box-sizing: border-box;
+
+        .from,
+        .to {
+          width: 49%;
+
+          .label {
+            @include flex(row, flex-start, center);
+            font-family: Bricolage Grotesque;
+            font-weight: 500;
+            color: $black;
+            font-size: 24px;
+          }
+
+          .input {
+            width: 100%;
+
+            input {
+              box-sizing: border-box;
+              background-color: $black;
+              font-family: Agrandir;
+              color: $white;
+              width: 100%;
+              padding: 8px 18px;
+              font-size: 22px;
+              border: none;
+              outline: none;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+
+      .item_info {
+        @include flex(row, space-between, center);
+        gap: 0px;
+        width: 100%;
+        border: 1px solid green;
+        box-sizing: border-box;
+
+        .cost,
+        .quantity,
+        .amount {
+          width: 32%;
+
+          .label {
+            @include flex(row, flex-start, center);
+            font-family: Bricolage Grotesque;
+            font-weight: 500;
+            color: $black;
+            font-size: 24px;
+          }
+
+          .input {
+            width: 100%;
+
+            input {
+              box-sizing: border-box;
+              background-color: $black;
+              font-family: Agrandir;
+              color: $white;
+              width: 100%;
+              padding: 8px 18px;
+              font-size: 22px;
+              border: none;
+              outline: none;
+              border-radius: 8px;
+
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .amount {
+          .total {
+            box-sizing: border-box;
+            background-color: $black;
+            font-family: Agrandir;
+            color: $green2;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .submit_button {
+        width: 100%;
+        @include flex(column, center, center);
+
+        button {
+          cursor: pointer;
+          width: 100%;
+          background: $green1;
+          padding: 12px;
+          font-family: Bricolage Grotesque;
+          border: none;
+          outline: none;
+          border-radius: 8px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $black;
+        }
+
+      }
+
+      .entry_container {
+        width: 100%;
+        @include flex(column, center, center);
+        gap: 25px;
+      }
+    }
+
+    input {
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
+
+    .errors {
+      @include flex(row, center, center);
+      gap: 5px;
+      font-family: AgrandirBold;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: red;
+      padding-left: 10px;
+
+      span {
+        max-width: 20px;
+        max-height: 20px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+
+
 }

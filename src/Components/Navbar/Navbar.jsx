@@ -37,8 +37,6 @@ const Navbar = () => {
   const [selectedMenuId, setSelectedMenuId] = useState()
   const navigate = useNavigate()
 
-  console.log('location,pathname', location.pathname)
-
   useEffect(() => {
     const currentPath = location.pathname;
     setSelectedMenuId(pathValueMap[currentPath])
