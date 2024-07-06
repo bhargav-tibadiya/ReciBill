@@ -101,8 +101,6 @@ const Application = () => {
 
   const { values, handleChange, handleSubmit, setFieldValue, handleBlur, touched, errors } = formik;
 
-  console.log('selectedDesignID', selectedDesignID)
-
   useEffect(() => {
     setIsInfoFormActice(false);
     if (selectedDesignID !== undefined) {
