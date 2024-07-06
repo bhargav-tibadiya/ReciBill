@@ -17,6 +17,20 @@
       color: $black;
       font-size: 52px;
       margin: 0px 0px 12px;
+
+      & span {
+        border-radius: 5px;
+        border-bottom: 2px solid $green1;
+      }
+
+      @media screen and (max-width:500px) {
+        font-size: 26px;
+      }
+
+      @media screen and (max-width:375px) {
+        font-size: 22px;
+      }
+
     }
 
     & h3 {
@@ -26,6 +40,16 @@
       margin: 6px 0;
       text-align: center;
       line-height: 100%;
+
+      @media screen and (max-width:500px) {
+        font-size: 20px;
+        max-width: 90%;
+        line-height: 120%;
+      }
+
+      @media screen and (max-width:375px) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -34,19 +58,39 @@
     gap: 25px;
     margin-bottom: 50px;
 
+    @media screen and (max-width:500px) {
+      gap: 10px;
+      flex-direction: column;
+    }
+
     .member {
       @include flex(column, center, center);
       width: 450px;
       height: 800px;
 
+      @media screen and (max-width:500px) {
+        width: 275px;
+        height: 420px;
+      }
+
       .member_avatar {
         width: 350px;
         height: 650px;
+        @include flex(column, center, center);
+
+        @media screen and (max-width:500px) {
+          width: 280px;
+          height: 370px;
+        }
 
         svg {
           width: 340px;
           height: 650px;
 
+          @media screen and (max-width:500px) {
+            width: 270px;
+            height: 365px;
+          }
         }
       }
 
@@ -54,6 +98,15 @@
         font-family: Bricolage Grotesque;
         font-size: 30px;
         color: $black;
+        background-color: $green3;
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        border-bottom: 2px solid $black;
+
+        @media screen and (max-width:500px) {
+          font-size: 18px;
+        }
       }
 
       .member_desc {
@@ -63,6 +116,10 @@
         line-height: 100%;
         color: $black;
         text-align: center;
+
+        @media screen and (max-width:500px) {
+          font-size: 15px;
+        }
       }
     }
   }
@@ -76,11 +133,32 @@
       font-weight: 600;
       color: $black;
       margin-bottom: 45px;
+
+      @media screen and (max-width:500px) {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+
+      @media screen and (max-width:375px) {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
     }
 
     .testimonials {
-      @include flex(row, center, center);
+      @include flex(row, flex-start, flex-start);
       gap: 25px;
+      width: 100%;
+
+      // height: 450px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media screen and (max-width:500px) {
+        max-width: 90vw;
+        overflow: auto;
+      }
 
       .testimonial {
         box-sizing: border-box;
@@ -91,11 +169,23 @@
         width: 400px;
         height: 400px;
 
+        @media screen and (max-width:500px) {
+          width: 300px;
+          height: 300px;
+          min-width: 300px;
+          padding: 10px;
+        }
+
         .content {
           font-family: Agrandir;
           font-size: 20px;
           line-height: 125%;
           color: $black;
+
+          @media screen and (max-width:500px) {
+            font-size: 16px;
+            line-height: 120%;
+          }
         }
 
         .user_name {
@@ -105,11 +195,19 @@
           line-height: 100%;
           color: $black;
 
+          @media screen and (max-width:500px) {
+            font-size: 20px;
+          }
+
           .user_position {
             font-family: Agrandir;
             font-size: 14px;
             line-height: 100%;
             color: $black;
+
+            @media screen and (max-width:500px) {
+              font-size: 12px;
+            }
           }
         }
       }

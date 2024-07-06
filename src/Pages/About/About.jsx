@@ -51,7 +51,7 @@ const About = () => {
     <div className={styles.about_container}>
       <div className={styles.intro_heading}>
         <h2>
-          We are group of Developers
+          We are group of <span> Developers </span>
         </h2>
         <h3>
           We are group of Computer Science Undergrads. Trying to build something that helps peoples/ business and saves their time
