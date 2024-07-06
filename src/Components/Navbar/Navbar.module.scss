@@ -10,12 +10,27 @@
   position: absolute;
   bottom: 30px;
 
+  @media screen and (max-width:500px) {
+    width: 85%;
+    height: 50px;
+    bottom: 15px;
+  }
+
   @include flex(column, center, center);
 
   .navbar_box {
     @include flex(row, center, center);
     @include occupyFullSpace();
     gap: 30px;
+    -webkit-tap-highlight-color: transparent;
+
+    @media screen and (max-width:500px) {
+      gap: 10px;
+    }
+
+    @media screen and (max-width:375px) {
+      gap: 5px;
+    }
 
     .menuItems {
       @include flex(row, center, center);
@@ -27,6 +42,17 @@
       min-width: 130px;
       border-radius: 50px;
       cursor: pointer;
+
+      @media screen and (max-width:500px) {
+        min-width: unset;
+        font-size: 18px;
+      }
+
+      @media screen and (max-width:375px) {
+        gap: 5px;
+        font-size: 16px;
+        padding: 2px 5px;
+      }
 
       &._active_ {
         background-color: $green1;
