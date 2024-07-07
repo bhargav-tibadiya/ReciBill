@@ -16,6 +16,14 @@
       color: $black;
       font-size: 52px;
       margin: 0px 0px 12px;
+
+      @media screen and (max-width:500px) {
+        font-size: 32px;
+      }
+
+      @media screen and (max-width:375px) {
+        font-size: 26px;
+      }
     }
   }
 
@@ -23,17 +31,36 @@
     @include flex(row, space-between, center);
     width: 1300px;
 
+    @media screen and (max-width:500px) {
+      flex-direction: column;
+      width: 90vw;
+    }
+
     .illustration {
       width: 50%;
+
+      @media screen and (max-width:500px) {
+        width: 100%;
+      }
 
       svg {
         min-width: 450px;
         height: 250px;
+
+        @media screen and (max-width:500px) {
+          min-width: unset;
+          width: 350px;
+        }
       }
     }
 
     .header {
       width: 50%;
+
+
+      @media screen and (max-width:500px) {
+        width: 100%;
+      }
 
       h2 {
         font-family: Bricolage Grotesque;
@@ -42,6 +69,10 @@
         font-size: 40px;
         margin: 0;
         line-height: 100%;
+
+        @media screen and (max-width:500px) {
+          font-size: 30px;
+        }
       }
 
       h3 {
@@ -50,6 +81,10 @@
         color: $black;
         font-size: 24px;
         line-height: 100%;
+
+        @media screen and (max-width:500px) {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -57,6 +92,12 @@
   .contact_form {
     @include flex(row, space-between, center);
     width: 1300px;
+
+    @media screen and (max-width:500px) {
+      max-width: 95vw;
+      flex-direction: column;
+      gap: 50px;
+    }
 
     .contact_info {
       @include flex(column, center, center);
@@ -66,6 +107,12 @@
       padding: 24px;
       gap: 30px;
 
+      @media screen and (max-width:500px) {
+        width: 100%;
+        padding: 8px;
+        gap: 10px;
+      }
+
       .info_card {
         @include flex(row, flex-start, flex-start);
         width: 100%;
@@ -74,28 +121,56 @@
           @include flex(row, center, center);
           width: 50px;
           height: 36px;
+
+          @media screen and (max-width:500px) {
+            width: 36px;
+            height: 30px;
+          }
+
+          svg {
+            @media screen and (max-width:500px) {
+              width: 20px;
+              height: 20px;
+            }
+          }
         }
 
         .right {
           @include flex(column, flex-start, flex-start);
           gap: 8px;
 
+          @media screen and (max-width:500px) {
+            gap: 4px;
+          }
+
           h3 {
             font-family: Bricolage Grotesque;
             margin: 0;
             font-weight: 600;
             font-size: 24px;
+
+            @media screen and (max-width:500px) {
+              font-size: 20px;
+            }
           }
 
           .desx1 {
             font-family: Agrandir;
             font-size: 20px;
+
+            @media screen and (max-width:500px) {
+              font-size: 16px;
+            }
           }
 
           .desx2 {
             @include flex(row, flex-start, center);
             gap: 20px;
             font-size: 20px;
+
+            @media screen and (max-width:500px) {
+              font-size: 16px;
+            }
 
             a {
               @include flex(row, flex-end, flex-end);
@@ -118,6 +193,10 @@
       @include flex(column, flex-start, flex-start);
       width: 50%;
       gap: 20px;
+
+      @media screen and (max-width:500px) {
+        width: 100%;
+      }
 
       .name {
         @include flex(row, space-between, flex-start);
@@ -324,19 +403,40 @@
     margin: 50px 0;
     color: $black;
 
+    @media screen and (max-width:500px) {
+      flex-direction: column-reverse;
+      margin: 20px 0;
+    }
+
     .suggest_left {
       @include flex(column, flex-start, flex-start);
       width: 48.5%;
+
+      @media screen and (max-width:500px) {
+        width: 100%;
+        max-width: 95vw;
+      }
 
       .suggest_head {
         width: 100%;
         font-family: Bricolage Grotesque;
         font-size: 48px;
         font-weight: 600;
+
+        @media screen and (max-width:500px) {
+          font-size: 32px;
+        }
       }
 
       .suggest_desc {
         font-family: Agrandir;
+
+        @media screen and (max-width:500px) {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+          line-height: 125%;
+        }
       }
 
       .suggest_button {
@@ -381,6 +481,15 @@
       height: 100%;
       @include flex(row, center, center);
 
+      @media screen and (max-width:500px) {
+        width: 100%;
+      }
+
+      svg {
+        @media screen and (max-width:500px) {
+          width: 95vw;
+        }
+      }
     }
   }
 
@@ -391,19 +500,40 @@
     margin: 50px 0;
     color: $black;
 
+    @media screen and (max-width:500px) {
+      flex-direction: column-reverse;
+      margin: 20px 0;
+    }
+
     .collab_left {
       @include flex(column, flex-start, flex-start);
       width: 48.5%;
+
+      @media screen and (max-width:500px) {
+        width: 100%;
+        max-width: 95vw;
+      }
 
       .collab_head {
         width: 100%;
         font-family: Bricolage Grotesque;
         font-size: 48px;
         font-weight: 600;
+
+        @media screen and (max-width:500px) {
+          font-size: 32px;
+        }
       }
 
       .collab_desc {
         font-family: Agrandir;
+
+        @media screen and (max-width:500px) {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+          line-height: 125%;
+        }
       }
 
       .collab_button {
@@ -448,6 +578,15 @@
       height: 100%;
       @include flex(row, center, center);
 
+      @media screen and (max-width:500px) {
+        width: 100%;
+      }
+
+      svg {
+        @media screen and (max-width:500px) {
+          width: 95vw;
+        }
+      }
     }
   }
 }
