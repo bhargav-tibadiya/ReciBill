@@ -4,6 +4,7 @@ import { Warning } from '../../Assests/SVG/GlobalSVG'
 import { useFormik } from 'formik'
 import styles from './Application.module.scss';
 import * as yup from 'yup'
+import { generatePDFS1 } from '../../Utils/Generation/style1';
 
 
 const template = [
@@ -42,7 +43,7 @@ const validationSchema = yup.object().shape({
   day: yup.number().min(1, "Enter Valid Date").max(31, "Enter Valid Date").required("Enter Date"),
   month: yup.number().min(1, "Enter Valid month").max(12, "Enter Valid month").required("Enter month"),
   year: yup.number().min(2000, "Enter Valid Year").max(2030, "Enter Valid Year").required("Enter Year"),
-  entries: yup.number().min(1, "Enter Valid Year").max(6, "Max 6 Entries Allowed").required("Enter no of Items"),
+  entries: yup.number().min(1, "Enter Valid Year").max(8, "Max 8 Entries Allowed").required("Enter no of Items"),
   from: yup.string().required('Please Enter the Sender Name'),
   to: yup.string().required('Please Enter the Receiver Name'),
   items: yup.array().of(
@@ -80,6 +81,7 @@ const Application = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log('values', values);
+      generatePDFS1(values);
     }
   })
 
@@ -376,6 +378,23 @@ const Application = () => {
                 </div>
               </div>
             ))}
+
+            <div className={styles.discount}>
+              <div className={styles.label}>
+                Discount
+                {(touched.discount && errors.discount) && <div className={styles.errors}><span><Warning /></span>{errors.discount}</div>}
+              </div>
+              <div className={styles.input}>
+                <input
+                  type="number"
+                  placeholder='1'
+                  name='discount'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.discount}
+                />
+              </div>
+            </div>
 
             <div className={styles.submit_button}>
               <button type='submit'>
