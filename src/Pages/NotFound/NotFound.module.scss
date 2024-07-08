@@ -1,0 +1,49 @@
+@import '../../Styles/constant';
+
+.not_found_container {
+  @include flex(column, center, center);
+  @include occupyFullSpace();
+  font-size: 48px;
+  font-family: Bricolage Grotesque;
+  color: $black;
+
+  .illlustration {
+    width: 500px;
+    height: 500px;
+
+    @media screen and (max-width:500px) {
+      width: 400px;
+      height: 400px;
+    }
+
+    @media screen and (max-width:375px) {
+      width: 340px;
+      height: 340px;
+    }
+
+    svg {
+      width: 500px;
+      height: 500px;
+
+      @media screen and (max-width:500px) {
+        width: 400px;
+        height: 400px;
+      }
+
+      @media screen and (max-width:375px) {
+        width: 340px;
+        height: 340px;
+      }
+    }
+  }
+
+  .text {
+    @media screen and (max-width:500px) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width:375px) {
+      font-size: 32px;
+    }
+  }
+}
