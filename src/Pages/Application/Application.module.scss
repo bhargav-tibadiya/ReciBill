@@ -8,7 +8,8 @@
   overflow: auto;
   gap: 50px;
   transition: 0.3s all ease;
-
+  overflow-y: scroll;
+  
 
   &.active {
     max-height: 100vh;
@@ -18,7 +19,6 @@
   @media screen and (max-width:500px) {
     max-width: 95vw;
     gap: 25px;
-    padding: 50px 0 100px;
   }
 
   // App css
@@ -197,6 +197,14 @@
       visibility: visible;
     }
 
+    form {
+      @include flex(column, center, center);
+      @media screen and (max-width:500px) {
+        max-width: 95%;
+      }
+
+    }
+
     .heading {
       font-family: Bricolage Grotesque;
       font-weight: 500;
@@ -216,12 +224,12 @@
       min-width: 800px;
       padding: 25px 25px 150px;
       gap: 25px;
-
+      
       @media screen and (max-width:500px) {
         max-width: 95%;
         min-width: unset;
         gap: 12px;
-        padding: 50px 0 100px;
+        padding: 50px 0 150px;
       }
 
       .main_title,
