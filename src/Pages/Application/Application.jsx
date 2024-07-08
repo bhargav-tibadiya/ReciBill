@@ -28,7 +28,7 @@ const template = [
   },
   {
     id: 2,
-    name: 'Varient 2',
+    name: 'Varient 3',
     path: 'images/varient1.png',
     tag1: 'Dynamic',
     tag2: 'Cool',
