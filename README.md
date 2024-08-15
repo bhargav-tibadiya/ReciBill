@@ -67,15 +67,19 @@ This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 
 ## 👨‍💻 Author
 
-**Your Name**
-
 * Github: [@Bhargav-Tibadiya](https://github.com/Bhargav-Tibadiya)
 
 ## 🤝 Contributing
 
+* Github: [@Shubham-Radadiya](https://github.com/shubhamradadiya)
+
+
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [@Bhargav-Tibadiya](https://www.linkedin.com/in/bhargav-tibadiya/).
+Feel free to DM US
+
+* [@Bhargav-Tibadiya](https://www.linkedin.com/in/bhargav-tibadiya/).
+* [@Shubham-Radadiya](https://www.linkedin.com/in/shubham-radadiya/).
 
 ## 🌟 Show your support
 
