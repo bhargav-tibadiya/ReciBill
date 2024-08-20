@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import styles from './Application.module.scss';
 import * as yup from 'yup'
 import { generatePDFS1 } from '../../Utils/Generation/style1';
+import { generatePDFS2 } from '../../Utils/Generation/style2';
 
 
 const template = [
@@ -75,13 +76,19 @@ const Application = () => {
 
   const [selectedDesignID, setSelectedDesignID] = useState();
   const [isInfoFormActice, setIsInfoFormActice] = useState(false);
+  
+  console.log('selectedDesignID', selectedDesignID)
 
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log('values', values);
-      generatePDFS1(values);
+      if (selectedDesignID === 0) {
+        generatePDFS1(values);
+      } else {
+        generatePDFS2(values);
+      }
     }
   })
 
